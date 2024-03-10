@@ -5,6 +5,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const mailSender = require("../utils/mailSender");
+const {passwordUpdated} = require("../mail/templates/passwordUpdate");
+const Profile = require("../models/Profile");
 
 //sendOTP
 exports.sendotp = async(req,res) => {
@@ -107,13 +109,13 @@ exports.signup = async(req,res) => {
         const recentOtp = await OTP.find({email}).sort({createdAt:-1}).limit(1);
         console.log(recentOtp);
         //validate otp
-        if(recentOtp.length == 0){
+        if(recentOtp.length === 0){
             //OTP not found
             return res.status(400).json({
                 success:false,
                 message:'OTP not found',
             })
-        } else if (otp !== recentOtp.otp) {
+        } else if (otp !== recentOtp[0].otp) {
             // Invalid OTP
             return res.status(400).json({
                 success: false,
@@ -123,6 +125,11 @@ exports.signup = async(req,res) => {
 
         //hash password
         const hashedPassword = await bcrypt.hash(password, 10);
+
+         // Create the user
+        let approved = ""
+        approved === "Instructor" ? (approved = false) : (approved = true)
+
 
         const profileDetails = await Profile.create({
             gender: null,
@@ -186,7 +193,7 @@ exports.login = async (req, res) => {
         const payload = {
             email: user.email,
             id: user._id,
-            role:user.accountType,
+            accountType:user.accountType,
         }
         const token = jwt.sign(payload,process.env.JWT_SECRET,
             {

@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+require('dotenv').config();
 
 const mailSender = async (email, title, body) => {
     try{
@@ -12,7 +13,7 @@ const mailSender = async (email, title, body) => {
 
 
             let info = await transporter.sendMail({
-                from: '<pratyakshagrawal2208@gmail.com>',
+                from: '"SkillSpire" <pratyakshagrawal2208@gmail.com>',
                 to:`${email}`,
                 subject: `${title}`,
                 html: `${body}`,

@@ -20,12 +20,12 @@ exports.updateProfile = async (req, res) => {
     const id = req.user.id;
 
     //validate
-    if(!contactNumber || !gender || !id){
-        return res.status(400).json({
-            success:false,
-            message:'All fields are required',
-        });
-    }
+    // if(!contactNumber || !gender || !id){
+    //     return res.status(400).json({
+    //         success:false,
+    //         message:'All fields are required',
+    //     });
+    // }
     // Find the profile by id
     const userDetails = await User.findById(id);
     const profileId = userDetails.additionalDetails;
@@ -99,6 +99,7 @@ exports.getAllUserDetails = async (req, res) => {
         return res.status(200).json({
           success: true,
           message: "User Data fetched successfully",
+          userDetails
         })
     }   
     catch (error) {

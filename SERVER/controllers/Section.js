@@ -5,7 +5,7 @@ exports.createSection = async(req,res) => {
     try{
         const {sectionName,courseId} = req.body;
 
-        if(!sectionName || courseId){
+        if(!sectionName || !courseId){
            return res.status(400).json({
             success:false,
             message:'Missing Properties',
@@ -74,22 +74,22 @@ exports.updateSection = async (req, res) => {
 	}
 };
 
-// Deleting a section
+// DELETE a section
 exports.deleteSection = async (req, res) => {
 	try {
-		const { sectionId }  = req.params;
+		const { sectionId,courseId } = req.body;
 		await Section.findByIdAndDelete(sectionId);
-
-		return res.status(200).json({
-			success:true,
-			message:"Section deleted successfully",
+		const updatedCourse = await Course.findById(courseId).populate({ path: "courseContent", populate: { path: "subSection" } }).exec();
+		res.status(200).json({
+			success: true,
+			message: "Section deleted",
+			updatedCourse,
 		});
-	} 
-    catch (error) {
-		return res.status(500).json({
+	} catch (error) {
+		console.error("Error deleting section:", error);
+		res.status(500).json({
 			success: false,
-			message: "Error deleting section",
-            error:error.message,
+			message: "Internal server error",
 		});
 	}
-};   
+};
