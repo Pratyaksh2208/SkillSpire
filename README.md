@@ -3,7 +3,7 @@ Online Learning Management System <br>
 <br>
 TechRockerz :  <br>
 1. Pratyaksh Agrawal ( https://github.com/Pratyaksh2208 ) <br>
-2. Puneet Yadav ( https://github.com/Puneetyadav ) <br>
+2. Puneet Yadav ( https://github.com/Concousbot97 ) <br>
 3. Garvit Jain ( https://github.com/Garvit729 ) <br>
 4. Dushyant Sharma( https://github.com/dusht-developer-96) <br>
 <br>
