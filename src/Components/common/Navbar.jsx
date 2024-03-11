@@ -5,7 +5,7 @@ import logo from "../../assets/Logo/Logo-Full-Light.png"
 import { Link, matchPath, useLocation } from "react-router-dom"
 import { NavbarLinks } from "../../data/navbar-links"
 import { useSelector } from "react-redux"
-import ProfileDropdown from "../core/Auth/ProfileDropDown";
+//import ProfileDropdown from "../core/Auth/ProfileDropDown";
 import { categories } from "../../services/apis";
 import { apiConnector } from "../../services/apiconnector"
 import { useState } from 'react';
@@ -109,7 +109,7 @@ const Navbar = () => {
             </Link>
           )}
         
-        {token !== null && <ProfileDropdown />}
+        {token !== null /*&& <ProfileDropdown />*/}
         </div>
 
      

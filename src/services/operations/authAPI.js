@@ -6,6 +6,7 @@ import { setUser } from "../../slices/profileSlice"
 import { apiConnector } from "../apiconnector"
 import { endpoints } from "../apis"
 
+
 const {
   SENDOTP_API,
   SIGNUP_API,
@@ -136,7 +137,9 @@ export function getPasswordResetToken(email , setEmailSent) {
   return async(dispatch) => {
     dispatch(setLoading(true));
     try{
+      console.log("RESET PASSWORD TOKEN RESPONSE....");
       const response = await apiConnector("POST", RESETPASSTOKEN_API, {email,})
+
 
       console.log("RESET PASSWORD TOKEN RESPONSE....", response);
 
