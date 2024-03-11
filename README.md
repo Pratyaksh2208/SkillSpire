@@ -1,31 +1,35 @@
-# React & Tailwind CSS Starter Pack
+Innodev 2K24
+Online Learning Management System
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
+TechRockerz : 
+1. Pratyaksh Agrawal ( https://github.com/Pratyaksh2208 )
+2. Puneet Yadav ( https://github.com/Puneetyadav )
+3. Garvit Jain ( https://github.com/Garvit729 )
+4. Dushyant Sharma( https://github.com/dusht-developer-96)
 
-## Usage
+Proposed Features :
+ **-User can Sign Up and Log In using email and password
+ -OTP verification and forgot password functionality
+ -User profile for both student and instructor, basic information enrolled courses
+ -Student will purchase courses using Razorpay
+ -Instructor can create read, update and delete courses
+ -Cloudinary to store and manage all media content**
 
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
+Innovation :
+ - Reviews and Rating of courses and instructor
 
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git
-    ```
+Tech Stack :
+   -**React.js** for Efficient and reusable component for frontend
+   -**Node.js** Primary Framework of Backend
+   -**Express.js** Web Application Framework providing a range of features
+   -**Mongoose** Object Data Modeling (ODM) library
+   -**JWT** For authentication and authorization of Users credential
+   -**Mongo Db** For database Management
 
-1. Install the required packages.
-    ```sh
-    cd react-tailwind-css-starter-pack
-    npm install
-    ```
+External Libraries and APIs :
+  - Socket.io
+  - Google APIs
+  - JWT web tokens
+  - Bcrypt
 
-1. Start the development server.
-    ```sh
-    npm start
-    ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
-1. Create your React components and add your styles using Tailwind classes. You can also create new CSS files and import them into your components.
 
-The project is set up to use `postcss-cli` to process your CSS files. You can add your own `tailwind.config.js` file to customize your Tailwind setup.
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
