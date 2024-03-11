@@ -45,7 +45,7 @@ const Navbar = () => {
       }
   return (
     <div className="flex h-14 item-center justify-center border-b-[1px] border-b-richblack-700">
-        <div className="flex w-11/12 max-w-maxContent item-center justify-between">
+        <div className="flex w-11/12 max-w-maxContent item-center justify-between ">
              {/* Logo */}
         <Link to="/">
           <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
@@ -53,7 +53,7 @@ const Navbar = () => {
 
              {/* Navigation links */}
         <nav>
-          <ul className="flex gap-x-6 text-richblack-25">
+          <ul className="flex gap-x-12 text-richblack-25 border-t-[15px] border-t-richblack-900">
             {NavbarLinks.map((link, index) => (
               <li key={index}>
                 {link.title === "Catalog" ? (
@@ -74,9 +74,11 @@ const Navbar = () => {
                       {link.title}
                     </p>
                   </Link>
-                )}
+                )
+                }
               </li>
-            ))}
+            ))
+            }
           </ul>
         </nav>
 
