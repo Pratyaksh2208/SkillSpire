@@ -1,4 +1,4 @@
-import { useState } from "react"
+// import { useState } from "react"
 // import { toast } from "react-hot-toast"
 // import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 // import { useDispatch } from "react-redux"
@@ -9,12 +9,12 @@ import { useState } from "react"
 // import { ACCOUNT_TYPE } from "../../../utils/constants"
 // import Tab from "../../common/Tab"
 
-function SignupForm() {
+// function SignupForm() {
 //   const navigate = useNavigate()
 //   const dispatch = useDispatch()
 
-//   // student or instructor
-//   const [accountType, setAccountType] = useState(ACCOUNT_TYPE.STUDENT)
+// //   // student or instructor
+// //   const [accountType, setAccountType] = useState(ACCOUNT_TYPE.STUDENT)
 
 //   const [formData, setFormData] = useState({
 //     firstName: "",
@@ -37,18 +37,18 @@ function SignupForm() {
 //     }))
 //   }
 
-//   // Handle Form Submission
-//   const handleOnSubmit = (e) => {
-//     e.preventDefault()
+// //   // Handle Form Submission
+// //   const handleOnSubmit = (e) => {
+// //     e.preventDefault()
 
-//     if (password !== confirmPassword) {
-//       toast.error("Passwords Do Not Match")
-//       return
-//     }
-//     const signupData = {
-//       ...formData,
-//       accountType,
-//     }
+// //     if (password !== confirmPassword) {
+// //       toast.error("Passwords Do Not Match")
+// //       return
+// //     }
+// //     const signupData = {
+// //       ...formData,
+// //       accountType,
+// //     }
 
 //     // Setting signup data to state
 //     // To be used after otp verification
@@ -205,6 +205,6 @@ function SignupForm() {
 //       </form>
 //     </div>
 //   )
-}
+ // }
 
-export default SignupForm
+// export default SignupForm
