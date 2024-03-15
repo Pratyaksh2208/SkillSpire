@@ -5,7 +5,8 @@ import logo from "../../assets/Logo/Logo-Full-Light.png"
 import { Link, matchPath, useLocation } from "react-router-dom"
 import { NavbarLinks } from "../../data/navbar-links"
 import { useSelector } from "react-redux"
-//import ProfileDropdown from "../core/Auth/ProfileDropDown";
+import ProfileDropdown from "../core/Auth/ProfileDropDown.jsx";
+import { ACCOUNT_TYPE } from "../../utils/constants"
 import { categories } from "../../services/apis";
 import { apiConnector } from "../../services/apiconnector"
 import { useState } from 'react';
@@ -84,7 +85,7 @@ const Navbar = () => {
 
           {/* Login / Signup / Dashboard */}
         <div className="hidden items-center gap-x-4 md:flex">
-          { user && user?.accountType !== "instructor" && (
+          {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
             <Link to="/dashboard/cart" className="relative">
               <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
               {totalItems > 0 && (
@@ -108,14 +109,12 @@ const Navbar = () => {
               </button>
             </Link>
           )}
-        
-        {token !== null /*&& <ProfileDropdown />*/}
+          {token !== null && <ProfileDropdown />}
         </div>
-
-     
-        </div>
-
-        
+        <button className="mr-4 md:hidden">
+          <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+        </button>
+      </div>
     </div>
   )
 }
