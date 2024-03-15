@@ -1,22 +1,22 @@
 import "./App.css";
 import { Route, Routes,useNavigate } from "react-router-dom";
-import Home from "./Pages/Home.jsx";
-import Login from "./Pages/Login.jsx";
-import Signup from "./Pages/Signup";
-import Navbar from "./Components/common/Navbar";
-import OpenRoute from "./Components/Core/Auth/OpenRoute.jsx"
-import ForgotPassword from "./Pages/ForgotPassword";
-import UpdatePassword from "./Pages/UpdatePassword";
-import VerifyEmail from "./Pages/VerifyEmail";
-import MyProfile from "./Components/Core/Dashboard/MyProfile";
-import Dashboard from "./Pages/Dashboard";
-import PrivateRoute from "./Components/Core/Auth/PrivateRoute";
-import Error from "./Pages/Error"
+import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup";
+import Navbar from "./components/common/Navbar";
+import OpenRoute from "./components/core/Auth/OpenRoute.jsx"
+import ForgotPassword from "./pages/ForgotPassword";
+import UpdatePassword from "./pages/UpdatePassword";
+import VerifyEmail from "./pages/VerifyEmail";
+import MyProfile from "./components/core/Dashboard/MyProfile";
+import Dashboard from "./pages/Dashboard";
+import PrivateRoute from "./components/core/Auth/PrivateRoute";
+import Error from "./pages/Error"
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
 //import Setting from "./Components/Core/Dashboard/Settings";
-import EnrolledCourses from "./Components/Core/Dashboard/EnrolledCourses";
-import Cart from "./Components/Core/Dashboard/Cart";
+import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
+import Cart from "./components/core/Dashboard/Cart";
 import { ACCOUNT_TYPE } from "./utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import CourseDetails from "./Pages/CourseDetails";
