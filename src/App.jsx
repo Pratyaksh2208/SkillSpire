@@ -19,6 +19,7 @@ import EnrolledCourses from "./Components/Core/Dashboard/EnrolledCourses";
 import Cart from "./Components/Core/Dashboard/Cart";
 import { ACCOUNT_TYPE } from "./utils/constants";
 import { useDispatch, useSelector } from "react-redux";
+import CourseDetails from "./Pages/CourseDetails";
 
 function App() {
       const dispatch = useDispatch();
@@ -33,7 +34,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home/> }/>
-
+          <Route path="courses/:courseId" element={<CourseDetails/>} />
           <Route
           path="login"
           element={
@@ -43,6 +44,8 @@ function App() {
             </OpenRoute>
           }
         />
+
+        
 
         <Route
           path="signup"

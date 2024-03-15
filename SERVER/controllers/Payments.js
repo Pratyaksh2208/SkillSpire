@@ -21,7 +21,7 @@ exports.capturePayment = async (req, res) => {
   let total_amount = 0
 
   for (const course_id of courses) {
-    let course
+    let course;
     try {
       // Find the course by its ID
       course = await Course.findById(course_id)
@@ -34,7 +34,7 @@ exports.capturePayment = async (req, res) => {
       }
 
       // Check if the user is already enrolled in the course
-      const uid = new mongoose.Types.ObjectId(userId)
+      const uid = new mongoose.Types.ObjectId(userId);
       if (course.studentsEnroled.includes(uid)) {
         return res
           .status(200)
@@ -95,9 +95,9 @@ exports.verifyPayment = async (req, res) => {
   const expectedSignature = crypto
     .createHmac("sha256", process.env.RAZORPAY_SECRET)
     .update(body.toString())
-    .digest("hex")
+    .digest("hex") 
 
-  if (expectedSignature === razorpay_signature) {
+  if (expectedSignature === razorpay_signature) {  //now we can enroll student since the sign. matches
     await enrollStudents(courses, userId, res)
     return res.status(200).json({ success: true, message: "Payment Verified" })
   }
@@ -146,7 +146,7 @@ const enrollStudents = async (courses, userId, res) => {
       .json({ success: false, message: "Please Provide Course ID and User ID" })
   }
 
-  for (const courseId of courses) {
+  for (const courseId of courses) {  //enrolling students in courses
     try {
       // Find the course and enroll the student in it
       const enrolledCourse = await Course.findOneAndUpdate(
