@@ -5,7 +5,7 @@ import logo from "../../assets/Logo/Logo-Full-Light.png"
 import { Link, matchPath, useLocation } from "react-router-dom"
 import { NavbarLinks } from "../../data/navbar-links"
 import { useSelector } from "react-redux"
-import ProfileDropdown from "../core/Auth/ProfileDropDown.jsx";
+import ProfileDropdown from "../Core/Auth/ProfileDropDown.jsx";
 import { ACCOUNT_TYPE } from "../../utils/constants"
 import { categories } from "../../services/apis";
 import { apiConnector } from "../../services/apiconnector"
