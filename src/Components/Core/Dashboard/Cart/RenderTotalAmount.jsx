@@ -1,30 +1,49 @@
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
-import IconBtn from "../../../common/IconBtn"
-// import { buyCourse } from "../../../../services/operations/studentFeaturesAPI"
+import { getFullDetailsOfCourse,} from "../../../../services/operations/courseDetailsAPI"
+import { setCourse, setEditCourse } from "../../../../slices/courseSlice"
+import RenderSteps from "../AddCourse/RenderSteps"
 
-export default function RenderTotalAmount() {
-  const { total, cart } = useSelector((state) => state.cart)
-  const { token } = useSelector((state) => state.auth)
-  const { user } = useSelector((state) => state.profile)
-  const navigate = useNavigate()
+
+export default function EditCourse() {
+
   const dispatch = useDispatch()
+  const { courseId } = useParams()
+  const { course } = useSelector((state) => state.course)
+  const [loading, setLoading] = useState(false)
+  const { token } = useSelector((state) => state.auth)
 
-//   const handleBuyCourse = () => {
-//     const courses = cart.map((course) => course._id)
-//     buyCourse(token, courses, user, navigate, dispatch)
-//   }
+  useEffect(() => {
+    ;(async () => {
+      setLoading(true)
+      const result = await getFullDetailsOfCourse(courseId, token)
+      if (result?.courseDetails) {
+        dispatch(setEditCourse(true))
+        dispatch(setCourse(result?.courseDetails))
+      }
+      setLoading(false)
+    })()
+  }, [])
+
+  if(loading) {
+    return (
+      <div className="grid flex-1 place-items-center">
+        <div className="spinner"></div>
+      </div>
+    )
+  }
 
   return (
-    <div className="min-w-[280px] rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6">
-      <p className="mb-1 text-sm font-medium text-richblack-300">Total:</p>
-      <p className="mb-6 text-3xl font-medium text-yellow-100">₹ {total}</p>
-      <IconBtn
-        text="Buy Now"
-        // onclick={handleBuyCourse}
-        customClasses="w-full justify-center"
-      />
+    
+    <div>
+      <h1 className="mb-14 text-3xl font-medium text-richblack-5">  Edit Course </h1>
+      <div className="mx-auto max-w-[600px]">
+        {course ? ( <RenderSteps /> ) : (<p className="mt-14 text-center text-3xl font-semibold text-richblack-100"> Course not found </p> )}
+      </div>
+    
     </div>
-  )
-}
+  
+
+)}

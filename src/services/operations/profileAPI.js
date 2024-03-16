@@ -32,7 +32,7 @@ export function getUserDetails(token, navigate) {
     dispatch(setLoading(false))
   }
 }
-
+console.log("hi")
  
 export async function getUserEnrolledCourses(token) {
   //const toastId = toast.loading("Loading...")
@@ -71,3 +71,4 @@ export async function getInstructorData(token) {
  // toast.dismiss(toastId)
   return result
 }
+console.log("hi")

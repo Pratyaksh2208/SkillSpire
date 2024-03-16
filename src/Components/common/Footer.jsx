@@ -172,7 +172,7 @@ const Footer = () => {
             })}
           </div>
 
-          <div className="text-center">Made with ❤️ TechRockerz © 2023 SkillSpire</div>
+          <div className="text-center">Made with ❤️ TechRockerz © 2024 SkillSpire</div>
         </div>
       </div>
     </div>

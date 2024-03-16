@@ -25,7 +25,7 @@ export default function CourseInformationForm() {
     getValues,
     formState: { errors },
   } = useForm()
-
+console.log("himnpm ls react-dom")
   const dispatch = useDispatch()
   const { token } = useSelector((state) => state.auth)
   const { course, editCourse } = useSelector((state) => state.course)
@@ -291,7 +291,7 @@ export default function CourseInformationForm() {
           <button
             onClick={() => dispatch(setStep(2))}
             disabled={loading}
-            className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900`}
+            className={'flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900'}
           >
             Continue Wihout Saving
           </button>

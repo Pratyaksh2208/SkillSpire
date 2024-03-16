@@ -69,14 +69,7 @@ const Sidebar = () => {
             </div>
 
         </div>
-
-
-
-
-
-
-
-        {/* mobile sidebar */}
+         {/* mobile sidebar */}
         <div className='flex lg:hidden fixed bottom-0 justify-between items-center px-2 py-1 bg-richblack-900 z-50 w-full'>
         <div className='flex flex-row gap-1 w-full justify-between'>
                 {
