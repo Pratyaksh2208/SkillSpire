@@ -11,3 +11,5 @@ export const apiConnector = (method, url, bodyData, headers, params) => {
         params: params ? params : null,
     });
 }
+
+//this api connector is used to connect backend api to frontend
