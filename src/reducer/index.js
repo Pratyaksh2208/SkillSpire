@@ -4,7 +4,7 @@ import authReducer from "../slices/authSlice"                 // importing all r
 import profileReducer from "../slices/profileSlice";
 import cartReducer from "../slices/cartSlice"
 import courseReducer from "../slices/courseSlice"
-import viewCourseReducer from "../slices/viewCourseSlice"
+import viewCourseReducer from "../slices/viewCourseSlice"  
 
 const rootReducer  = combineReducers({                  // combining all reducer;
     auth: authReducer,

@@ -5,9 +5,12 @@ const User = require("../models/User");
 
 //authentication means it verify the token which we had saved in controller (in cookie , and body(user));
 exports.auth = async (req, res, next) => {
-    try{
-        //extract token
-        const token = req.cookies.token || req.body.token || req.header("Authorization").replace("Bearer ", "");
+	try {
+		// Extracting JWT from request cookies, body or header
+		const token =
+			req.cookies.token ||
+			req.body.token ||
+			req.header("Authorization").replace("Bearer ", "");
 
         if(!token){                                             //if token missing, then return response
             return res.status(401).json({
