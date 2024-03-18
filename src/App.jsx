@@ -119,18 +119,15 @@ return (
        )
      }
 
-     {
-       user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
-         <>
-         <Route path="dashboard/instructor" element={<Instructor />} />
-         <Route path="dashboard/add-course" element={<AddCourse />} />
-         <Route path="dashboard/my-courses" element={<MyCourses />} />
-         <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />
-         
-         </>
-       )
-     }
-
+{ user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
+                                        <>
+                                            <Route path="dashboard/instructor" element={<Instructor />} />
+                                            <Route path="dashboard/add-course" element={<AddCourse />} />
+                                            <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />
+                                            <Route path="dashboard/my-courses" element={<MyCourses />} />    
+                                        </>
+                                  )
+                    }
 
    </Route>
 
